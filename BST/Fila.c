@@ -17,7 +17,7 @@ void Inserir(ApontadorArvore *Tree, int valor){
 
     } else {
 
-        if (valor < (*Tree)->chave){
+        if (valor <= (*Tree)->chave){
 
             Inserir(&(*Tree)->filhoEsq, valor);
         }
@@ -61,28 +61,21 @@ void PosOrdem(ApontadorArvore *Tree){
 int PesquisarNaArvore(ApontadorArvore *Tree, int valor){
 
     if (*Tree == NULL){
-
-        printf("Arvore invalida\n");
         return 0;
     }
 
-    if ((*Tree)->chave == valor){
+    if ((*Tree)->chave > valor){
 
-        printf("Valor Encontrado\n");
-
-    } else {
-
-        if ((*Tree)->chave > valor){
-
-            PesquisarNaArvore(&(*Tree)->filhoEsq, valor);
-        }
-        if ((*Tree)->chave < valor){
-
-            PesquisarNaArvore(&(*Tree)->filhoDir, valor);
-        }
+      return PesquisarNaArvore(&(*Tree)->filhoEsq, valor);
     }
+    if ((*Tree)->chave < valor){
 
-    return 1;
+      return PesquisarNaArvore(&(*Tree)->filhoDir, valor);
+    }
+    
+    int conta = PesquisarNaArvore(&(*Tree)->filhoEsq, valor);
+
+    return conta + 1;
 }
 
 void Antecessor(ApontadorArvore noAtual, ApontadorArvore *noFilho){
