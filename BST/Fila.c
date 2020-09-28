@@ -73,9 +73,9 @@ int PesquisarNaArvore(ApontadorArvore *Tree, int valor){
       return PesquisarNaArvore(&(*Tree)->filhoDir, valor);
     }
     
-    int conta = PesquisarNaArvore(&(*Tree)->filhoEsq, valor);
+    int count = PesquisarNaArvore(&(*Tree)->filhoEsq, valor);
 
-    return conta + 1;
+    return count + 1;
 }
 
 void Antecessor(ApontadorArvore noAtual, ApontadorArvore *noFilho){
