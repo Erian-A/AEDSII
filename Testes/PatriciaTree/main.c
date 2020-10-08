@@ -23,24 +23,4 @@ int main()
 
     printf("%d\n", semente->No.NoInterno.numBitOndeDifere);
 
-
-
-
-
-
-    /// Testes func basicas
-    /*
-    Palavra peleps;
-
-    peleps = EncapsulaVocabulo("retangulo");
-
-    printf("%s\n", peleps.vocabulo);
-
-    for (int i = 0; i < 10; i++){
-        printf("%d", peleps.codigoBinario[i]);
-    }
-    */
-
-    printf("\nHello world!\n");
-    return 0;
 }
